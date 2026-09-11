@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-counter {
+  background: #2e2e2e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  gap: 40px;
+}
+
+.counter-div {
+  display: flex;
+  gap: 20px;
+}
+
+.counter-div button {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.reset {
+  width: 60px;
+  height: 30px;
+}
