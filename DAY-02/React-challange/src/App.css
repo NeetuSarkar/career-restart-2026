@@ -77,6 +77,31 @@ body {
   margin-top: 3px;
 }
 
+.add-user-btn {
+  border: none;
+  background: #111827;
+  color: white;
+
+  padding: 11px 18px;
+  border-radius: 9px;
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.add-user-btn:hover {
+  background: #000;
+  transform: translateY(-1px);
+}
+
+.add-user-btn:active {
+  transform: translateY(0);
+}
 /* Filters */
 
 .filter-container {
@@ -195,6 +220,42 @@ body {
   border-radius: 50%;
   background: currentColor;
 }
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.add-user-modal {
+  width: 400px;
+  background: white;
+
+  padding: 30px;
+  border-radius: 14px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+
+  animation: modalAppear 0.25s ease;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 
 /* Mobile */
 
@@ -224,4 +285,122 @@ body {
   .user-table td {
     padding: 14px;
   }
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.edit-btn {
+  background: #e8f0fe;
+  color: #2563eb;
+}
+
+.edit-btn:hover {
+  background: #dbe7fd;
+}
+
+.delete-btn {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.delete-btn:hover {
+  background: #fecaca;
+}
+
+.done-btn {
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.done-btn:hover {
+  background: #bbf7d0;
+}
+
+.editing-row {
+  background: #fafaff;
+}
+
+.editing-row td {
+  border-top-color: #e3e1ff;
+}
+
+/* =========================
+   Edit Inputs
+========================= */
+
+.edit-input,
+.edit-select {
+  height: 36px;
+  border: 1px solid #dfe3eb;
+  border-radius: 7px;
+  background: white;
+  color: #172033;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.edit-input {
+  padding: 0 10px;
+}
+
+.edit-input:focus,
+.edit-select:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+}
+
+/* Different input widths */
+
+.name-input {
+  width: 130px;
+}
+
+.age-input {
+  width: 70px;
+}
+
+.role-input {
+  width: 120px;
+}
+
+.edit-select {
+  padding: 0 28px 0 10px;
+  cursor: pointer;
+}
+
+/* Remove number input arrows */
+
+.age-input::-webkit-inner-spin-button,
+.age-input::-webkit-outer-spin-button {
+  margin: 0;
+}
+
+/* =========================
+   Editing Row Avatar
+========================= */
+
+.editing-row .avatar {
+  background: #e8e6ff;
+  color: #5148d9;
 }
